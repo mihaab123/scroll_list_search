@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gif/flutter_gif.dart';
 import 'package:scroll_list_search/blocs/giphy_cubit.dart';
 import 'package:scroll_list_search/models/gif_model.dart';
 import 'package:scroll_list_search/widgets/list_item.dart';
@@ -38,18 +37,15 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage> {
   ScrollController controller = ScrollController();
   TextEditingController textEditingController = TextEditingController();
-  late FlutterGifController gifController;
   int page = 0;
   bool isLoading = false;
 
   @override
   void initState() {
     super.initState();
-    gifController = FlutterGifController(vsync: this);
     if (textEditingController.text.isNotEmpty) {
       fetch();
     }

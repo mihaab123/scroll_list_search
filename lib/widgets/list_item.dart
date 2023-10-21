@@ -10,7 +10,6 @@ class ListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(8),
-      height: 50,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -24,12 +23,13 @@ class ListItem extends StatelessWidget {
               Border.all(color: Theme.of(context).colorScheme.inversePrimary)),
       child: ListTile(
         leading: SizedBox(
-          height: 30,
-          width: 30,
+          height: 130,
+          width: 130,
           child: CachedNetworkImage(
             imageUrl: item.url,
             placeholder: (context, url) => const CircularProgressIndicator(),
             errorWidget: (context, url, error) => const Icon(Icons.error),
+            fit: BoxFit.fill,
           ),
         ),
         title: Text(item.title),

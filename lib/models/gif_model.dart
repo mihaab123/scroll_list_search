@@ -36,7 +36,7 @@ class GifModel {
     return GifModel(
       map['id'] as String,
       map['title'] as String,
-      map['url'] as String,
+      map["images"]["original"]['url'] as String,
     );
   }
 

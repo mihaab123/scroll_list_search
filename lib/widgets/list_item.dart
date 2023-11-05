@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:scroll_list_search/models/gif_model.dart';
 
 class ListItem extends StatelessWidget {
@@ -33,7 +34,7 @@ class ListItem extends StatelessWidget {
           ),
         ),
         title: Text(item.title),
-      ),
+      ).animate().slideX(),
     );
   }
 }

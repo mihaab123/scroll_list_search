@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scroll_list_search/blocs/giphy_cubit.dart';
 import 'package:scroll_list_search/models/gif_model.dart';
@@ -71,9 +72,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title)
+              .animate()
+              .scale(
+                curve: Curves.decelerate,
+                duration: Duration(milliseconds: 500),
+              )
+              .slideX(
+                curve: Curves.decelerate,
+                duration: Duration(milliseconds: 500),
+              )),
       body: Column(
         children: [
           SearchField(

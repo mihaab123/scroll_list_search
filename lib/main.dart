@@ -77,11 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
               .animate()
               .scale(
                 curve: Curves.decelerate,
-                duration: Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 500),
               )
               .slideX(
                 curve: Curves.decelerate,
-                duration: Duration(milliseconds: 500),
+                duration: const Duration(milliseconds: 500),
               )),
       body: Column(
         children: [
